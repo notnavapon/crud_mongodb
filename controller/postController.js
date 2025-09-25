@@ -1,7 +1,5 @@
 import Post from "../models/postModel.js";
 
-
-
 export const getAllPost = async(req , res)=>{
     try {
         const posts = await Post.find()

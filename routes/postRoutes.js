@@ -1,8 +1,8 @@
-const express = require("express")
+import express from "express";
 const router = express.Router()
 
 
-const { getAllPost , createPost, getPostId, deletePostId, updatePost} = require("../controller/postController");
+import { getAllPost , createPost, getPostId, deletePostId, updatePost} from "../controller/postController.js";
 
 
 //get all data
@@ -21,5 +21,4 @@ router.get("/:id", getPostId)
 //delete
 router.delete("/:id", deletePostId)
 
-
-module.exports = router
+export default router;

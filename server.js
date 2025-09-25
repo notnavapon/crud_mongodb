@@ -1,11 +1,9 @@
-const express = require("express")
-const mongoose = require("mongoose")
-const cors =require("cors")
-const dotenv = require("dotenv")
-const postRoutes = require("./routes/postRoutes")
-
-
-const morgan = require("morgan") 
+import express from "express";
+import mongoose from "mongoose";
+import cors  from "cors";
+import dotenv from "dotenv";
+import postRoutes from "./routes/postRoutes.js";
+import morgan from "morgan" ;
 
 
 dotenv.config()

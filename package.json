@@ -8,6 +8,7 @@
     "dev": "nodemon dev"
   },
   "keywords": [],
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
