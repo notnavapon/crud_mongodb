@@ -4,6 +4,7 @@ import cors  from "cors";
 import dotenv from "dotenv";
 import postRoutes from "./routes/postRoutes.js";
 import morgan from "morgan" ;
+import { connectDB } from "./config/db.js";
 
 
 dotenv.config()
@@ -20,11 +21,10 @@ app.use(morgan("dev")) //log req
 //routes
 app.use("/api/posts", postRoutes)
 
+// Connect database and start server
+const PORT = process.env.PORT || 5000;
 
 //database
-mongoose.connect(process.env.MONGO_URI).then(
-    () =>{
-        console.log("MongoDB connected")
-        app.listen(5000, ()=> console.log("Server running on port 5000"))
-    }
-).catch(error => console.log(error))
+connectDB().then(() => {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+});
