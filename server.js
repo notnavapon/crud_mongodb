@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const cors =require("cors")
 const dotenv = require("dotenv")
 const postRoutes = require("./routes/postRoutes")
-const userRoutes = require("./routes/userRoutes")
+
 
 const morgan = require("morgan") 
 
@@ -21,7 +21,6 @@ app.use(morgan("dev")) //log req
 
 //routes
 app.use("/api/posts", postRoutes)
-app.use("/api/user", userRoutes)
 
 
 //database
